@@ -1,0 +1,16 @@
+License
+=======
+
+This work is released under the terms of the GNU GPL Version 3 license or later.
+
+This work includes unmodified source code, unmodified header files and 
+unmodified libraries from the following projects:
+
+* X-Plane SDK 3.0.3
+* glpng version 1.46
+* libpng version 1.6.38
+* zlib version 1.2.11
+* OpenGL version 4.6
+* OpenAL version 1.1
+
+Craig Smoothey <craig@smoothey.org>
