@@ -1,3 +1,6 @@
+#if LIN | APL
+	#include <stddef.h>
+#endif
 #include "XPLMDisplay.h"
 #include "mouse.h"
 #include "shared.h"

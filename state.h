@@ -1,6 +1,10 @@
 #pragma once
 
-#include <sys\timeb.h>
+#if IBM
+	#include <sys\timeb.h>
+#else
+	#include <sys/timeb.h>
+#endif
 #include <stdbool.h>
 #include "metrics.h"
 #include "XPLMDisplay.h"

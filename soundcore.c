@@ -1,3 +1,7 @@
+#if LIN | APL
+	#include <stdlib.h>
+	#include <string.h>
+#endif
 #include <stdio.h>
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
@@ -198,7 +202,8 @@ float openSound(float elapsed, float elapsed_sim, int counter, void * ref) {
 		alcCloseDevice(sndDev);
 		return 0.0f;
 	}
-	alcMakeContextCurrent(sndCtx);
+	alcMakeContextCurrent(sndCtx);
+
 	alGetError();
 	alGenSources(1, &sndSrc);
 	ALuint e = alGetError();
@@ -242,7 +247,12 @@ float openSound(float elapsed, float elapsed_sim, int counter, void * ref) {
 	strcpy(buf, pluginDir);
 	strcat(buf, "mark.wav");
 	sndBuffers[SOUND_ID_MARK] = loadWave(buf);
-	if (prevSndCtx != NULL) {		alcMakeContextCurrent(prevSndCtx);	}	return 0.0f;}
+
+	if (prevSndCtx != NULL) {
+		alcMakeContextCurrent(prevSndCtx);
+	}
+	return 0.0f;
+}
 
 void closeSound() {
 	if (sndSrc) {

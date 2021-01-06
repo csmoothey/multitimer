@@ -1,3 +1,8 @@
+#if LIN | APL
+	#include <stddef.h>
+	#include <stdlib.h>
+	#include <string.h>
+#endif
 #include "drawcore.h"
 #include "state.h"
 #include "mouse.h"
@@ -33,10 +38,10 @@ boolean isDrawClose = false;
 byte cursorType = 0;
 boolean isResize = false;
 
-static XPLMFlightLoopID timerFloopId;
-static XPLMFlightLoopID mouseFloopId;
-static XPLMCommandRef commandId;
-static XPLMMenuID g_menu_id;
+XPLMFlightLoopID timerFloopId;
+XPLMFlightLoopID mouseFloopId;
+XPLMCommandRef commandId;
+XPLMMenuID g_menu_id;
 
 static void createWindow() {
 	int global_desktop_bounds[4]; // left, bottom, right, top

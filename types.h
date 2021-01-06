@@ -1,5 +1,11 @@
 #pragma once
 
+#if LIN | APL
+	#include <stdbool.h>
+	typedef bool boolean;
+	typedef unsigned char byte;
+#endif
+
 typedef struct {
 	boolean isRunning;
 	byte mode;

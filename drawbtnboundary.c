@@ -1,4 +1,6 @@
-#include <windows.h>
+#if IBM
+	#include <windows.h>
+#endif
 #include <GL/gl.h>
 #include "metrics.h"
 #include "XPLMGraphics.h"
