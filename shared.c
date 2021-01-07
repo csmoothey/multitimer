@@ -1,3 +1,6 @@
+#if LIN | APL
+	#include <stddef.h>
+#endif
 #include "state.h"
 #include "shared.h"
 #include "volumeid.h"
