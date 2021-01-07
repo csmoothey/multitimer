@@ -1,9 +1,10 @@
 ---
 title: MultiTimer Manual
-subtitle: 1.0.0
+subtitle: 1.0.1
 author: Craig Smoothey
-date: 18 December 2020
+date: 7 January 2021
 geometry: margin=1in
+papersize: a4
 fontsize: 12pt
 toc: true
 numbersections: true
@@ -196,3 +197,13 @@ unmodified libraries from the following projects:
 Please report any bugs to:
 
 Craig Smoothey \<craig@smoothey.org\>
+
+# Version Log
+
++---------+--------------------------------------------------------------------+
+| Version | Changes |
++=========+====================================================================+
+|  1.0.1  | Added support for Linux OS. Tested on Ubuntu 20.04 LTS. |
++---------+--------------------------------------------------------------------+
+|  1.0.0  | Initial release. Only supports Windows OS. |
++---------+--------------------------------------------------------------------+
