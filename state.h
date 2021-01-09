@@ -38,3 +38,4 @@ extern boolean isDrawClose;
 extern byte cursorType;
 extern boolean isResize;
 extern XPLMMenuID g_menu_id;
+extern byte brightness;

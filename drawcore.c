@@ -12,6 +12,8 @@
 static XPLMTextureID textureId;
 
 static void drawTexture(coords tc, coords dc) {
+	float f = 1.0f/(float)pow(2.0, (double)brightness);
+	glColor4f(f, f, f, 1.0);
 	glBegin(GL_QUADS);
 	glTexCoord2f(tc.left, tc.top); glVertex2f(dc.left, dc.bottom);
 	glTexCoord2f(tc.left, tc.bottom); glVertex2f(dc.left, dc.top);
@@ -449,7 +451,7 @@ int loadTexture(char *textureName)
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 	pngInfo info;
 	return pngLoad(textureName, PNG_NOMIPMAP, PNG_ALPHA, &info);
 }
