@@ -1,8 +1,8 @@
 ---
 title: MultiTimer Manual
-subtitle: 1.0.1
+subtitle: 1.0.2
 author: Craig Smoothey
-date: 7 January 2021
+date: 9 January 2021
 geometry: margin=1in
 papersize: a4
 fontsize: 12pt
@@ -19,7 +19,12 @@ a defined interval. The pilot may at times need to know the time spent aloft.
 
 The MultiTimer is a tool designed to meet these needs. In addition to the usual
 clock, three independent timers are provided. Each timer can count up or count 
-down. Count-down timers provide audio callouts at key moments
+down. Count-down timers provide audio callouts at key moments.
+
+# Supported Operating Systems
+
+* Windows
+* Linux
 
 # Installation
 
@@ -52,14 +57,14 @@ the clock or any running timers.
 A ![](hand.png){height=11pt} symbol will appear if the cursor is moved to 
 the thin rectangular area above the "Clock", "Timer 1", "Timer 2", "Timer 3" 
 buttons and below the top edge of the MultiTimer. If the mouse is clicked while 
-this symbol is displayed, the symbol will replaced with the 
+this symbol is displayed, the symbol will change to the 
 ![](hand-move.png){height=11pt} symbol. Dragging the mouse will move the window 
 around the monitor.
 
 A ![](hand.png){height=11pt} symbol will appear if the cursor is moved to 
 the bottom-right area of the window (right of the "Recall" button and below the 
 "Start/Stop" button). If the mouse is clicked while this symbol is displayed, 
-the symbol will change to ![](hand-pinch.png){height=11pt} symbol. 
+the symbol will change to the ![](hand-pinch.png){height=11pt} symbol. 
 Dragging the mouse will resize the window.
 
 The key command setup in the Installation section of this document can be used to
@@ -115,7 +120,7 @@ button for the selected timer. Click the "Start/Stop" button to start the
 count-down. The count-down timer can be paused and resumed by clicking the 
 "Start/Stop" button. Once the timer is running, the user can select the clock 
 or other timers and perform operations on them. When the user later selects 
-this timer, the remaining time will be displayed again the the LCD HH:MM:SS 
+this timer, the remaining time will be displayed again on the LCD HH:MM:SS 
 display. 
 
 When the time remaining is less than or equal to 60 seconds, the seconds 
@@ -130,7 +135,7 @@ When the count-down reaches certain times, an audio message will be spoken:
 * With 30 seconds remaining, the phrase "Thirty Seconds" will be spoken. 
 * With 15 seconds remaining, the phrase "Fifteen Seconds" will be spoken. 
 * With 5 seconds remaining, the phrase "Five Seconds" will be spoken.
-* With 0 seconds remaining, the phrase "Mark" will be spoken.
+* With 0 seconds remaining, the word "Mark" will be spoken.
 
 If multiple count-down timers are running, only the timer with the lowest time 
 remaining will provide audio callouts.
@@ -175,7 +180,6 @@ performing multiple circuits in a holding pattern.
 * The clock and timers do not count up or down while X-Plane is in replay mode.
 * A battery remaining symbol is displayed on the MultiTimer. Logic for 
 battery depletion is not implemented.
-* The plugin is currently only compiled for Windows
 
 # License
 
@@ -203,6 +207,8 @@ Craig Smoothey \<craig@smoothey.org\>
 +---------+--------------------------------------------------------------------+
 | Version | Changes |
 +=========+====================================================================+
+|  1.0.2  | Corrections to the manual. |
++---------+--------------------------------------------------------------------+
 |  1.0.1  | Added support for Linux OS. Tested on Ubuntu 20.04 LTS. |
 +---------+--------------------------------------------------------------------+
 |  1.0.0  | Initial release. Only supports Windows OS. |
