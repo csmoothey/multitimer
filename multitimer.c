@@ -26,6 +26,7 @@ byte buttonPressed = 0;
 boolean isPwrOn = false;
 byte selected = 0;
 byte volume = 3;
+byte brightness = 0;
 float clockTime = 0.0;
 float zuluTime = 0.0;
 boolean isSet = false;
@@ -41,6 +42,7 @@ boolean isResize = false;
 XPLMFlightLoopID timerFloopId;
 XPLMFlightLoopID mouseFloopId;
 XPLMCommandRef commandId;
+XPLMCommandRef commandId2;
 XPLMMenuID g_menu_id;
 
 static void createWindow() {
@@ -86,6 +88,16 @@ static int commandHandler(XPLMCommandRef inCommand, XPLMCommandPhase inPhase, vo
 	return 0;
 }
 
+static int commandHandler2(XPLMCommandRef inCommand, XPLMCommandPhase inPhase, void * inRefcon) {
+	if (inPhase == 0)
+	{
+		brightness = (brightness + 1) % 4;
+	}
+
+	return 0;
+}
+
+
 PLUGIN_API int XPluginStart(char * outName, char * outSig, char * outDesc) {
 	strcpy(outName, "MultiTimer");
 	strcpy(outSig, "craigsmoothey.multitimer");
@@ -110,6 +122,9 @@ PLUGIN_API int XPluginStart(char * outName, char * outSig, char * outDesc) {
 
 	commandId = XPLMCreateCommand("MultiTimer/ToggleDisplay", "Toggle display of the MultiTimer window");
 	XPLMRegisterCommandHandler(commandId, commandHandler, 1, (void *)0);
+
+	commandId2 = XPLMCreateCommand("MultiTimer/Brightness", "Change brightness of the MultiTimer window");
+	XPLMRegisterCommandHandler(commandId2, commandHandler2, 1, (void *)0);
 
 	int g_menu_container_idx = XPLMAppendMenuItem(XPLMFindPluginsMenu(), "MultiTimer", 0, 0);
 	g_menu_id = XPLMCreateMenu("MultiTimer", XPLMFindPluginsMenu(), g_menu_container_idx, dummy_menu_handler, NULL);
