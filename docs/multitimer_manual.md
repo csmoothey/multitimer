@@ -1,6 +1,6 @@
 ---
 title: MultiTimer Manual
-subtitle: 1.0.2
+subtitle: 1.0.3
 author: Craig Smoothey
 date: 9 January 2021
 geometry: margin=1in
@@ -43,6 +43,9 @@ chosen to toggle the display of the MultiTimer.
   
 ![](keyboard-command.png){width=6.5in}
 
+The "Change brightness of the MultiTimer window" entry can be used to configure 
+a key for changing the MultiTimer window brightness.
+
 # Operating Procedures
 
 ![](multitimer.png)
@@ -67,8 +70,13 @@ the bottom-right area of the window (right of the "Recall" button and below the
 the symbol will change to the ![](hand-pinch.png){height=11pt} symbol. 
 Dragging the mouse will resize the window.
 
-The key command setup in the Installation section of this document can be used to
-toggle the display of the MultiTimer.
+The "Toggle display of the MultiTimer window" key command setup in the 
+Installation section of this document can be used to toggle the display of the 
+MultiTimer.
+
+The "Change brightness of the MultiTimer window" key command setup in the 
+Installation section of this document can be used to change the display 
+brightness of the MultiTimer.
 
 ## Power On/Off
 
@@ -207,6 +215,8 @@ Craig Smoothey \<craig@smoothey.org\>
 +---------+--------------------------------------------------------------------+
 | Version | Changes |
 +=========+====================================================================+
+|  1.0.3  | Added keyboard command to change the window brightness. |
++---------+--------------------------------------------------------------------+
 |  1.0.2  | Corrections to the manual. |
 +---------+--------------------------------------------------------------------+
 |  1.0.1  | Added support for Linux OS. Tested on Ubuntu 20.04 LTS. |
