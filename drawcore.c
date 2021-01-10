@@ -12,7 +12,8 @@
 static XPLMTextureID textureId;
 
 static void drawTexture(coords tc, coords dc) {
-	float f = 1.0f/(float)pow(2.0, (double)brightness);
+	float sqrt2 = 1.414213562f;
+	float f = 1.0f/(float)pow(sqrt2, (double)brightness);
 	glColor4f(f, f, f, 1.0);
 	glBegin(GL_QUADS);
 	glTexCoord2f(tc.left, tc.top); glVertex2f(dc.left, dc.bottom);
