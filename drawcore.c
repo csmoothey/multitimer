@@ -1,6 +1,10 @@
 #include "drawcore.h"
 #include <GL/glpng.h>
-#include <GL/gl.h>
+#if APL
+   #include <OpenGl/gl.h>
+#else
+   #include <GL/gl.h>
+#endif
 #include "drawbtnboundary.h"
 #include "state.h"
 #include "selectedid.h"

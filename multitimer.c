@@ -114,6 +114,9 @@ PLUGIN_API int XPluginStart(char * outName, char * outSig, char * outDesc) {
 	char overlayFile[2048];
 	strcpy(overlayFile, pluginDir);
 	strcat(overlayFile, "timeroverlay.png");
+    #if APL
+        ConvertPath(overlayFile,overlayFile,sizeof(overlayFile));
+    #endif
 
 	if (!loadTexture(overlayFile)) {
 		XPLMDebugString("MultiTimer: Error loading the overlay file");

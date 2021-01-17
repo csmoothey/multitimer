@@ -1,7 +1,11 @@
 #if IBM
 	#include <windows.h>
 #endif
-#include <GL/gl.h>
+#if APL
+   #include <OpenGl/gl.h>
+#else
+   #include <GL/gl.h>
+#endif
 #include "metrics.h"
 #include "XPLMGraphics.h"
 #include "types.h"

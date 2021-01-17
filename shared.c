@@ -50,3 +50,20 @@ void getPluginDir(char * buf) {
 	slash++;
 	*slash = 0;
 }
+
+#if APL
+int ConvertPath(const char * inPath, char * outPath, int outPathMaxLen) {
+
+    CFStringRef inStr = CFStringCreateWithCString(kCFAllocatorDefault, inPath ,kCFStringEncodingMacRoman);
+    if (inStr == NULL)
+        return -1;
+    CFURLRef url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, inStr, kCFURLHFSPathStyle,0);
+    CFStringRef outStr = CFURLCopyFileSystemPath(url, kCFURLPOSIXPathStyle);
+    if (!CFStringGetCString(outStr, outPath, outPathMaxLen, kCFURLPOSIXPathStyle))
+        return -1;
+    CFRelease(outStr);
+    CFRelease(url);
+    CFRelease(inStr);
+    return 0;
+}
+#endif

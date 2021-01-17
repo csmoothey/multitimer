@@ -230,23 +230,38 @@ float openSound(float elapsed, float elapsed_sim, int counter, void * ref) {
 
 	strcpy(buf, pluginDir);
 	strcat(buf, "sixtyseconds.wav");
+    #if APL
+        ConvertPath(buf,buf,sizeof(buf));
+    #endif
 	sndBuffers[SOUND_ID_60_SECONDS] = loadWave(buf);
 
 	strcpy(buf, pluginDir);
 	strcat(buf, "thirtyseconds.wav");
-	sndBuffers[SOUND_ID_30_SECONDS] = loadWave(buf);
+    #if APL
+        ConvertPath(buf,buf,sizeof(buf));
+    #endif
+    sndBuffers[SOUND_ID_30_SECONDS] = loadWave(buf);
 
 	strcpy(buf, pluginDir);
 	strcat(buf, "fifteenseconds.wav");
-	sndBuffers[SOUND_ID_15_SECONDS] = loadWave(buf);
+    #if APL
+        ConvertPath(buf,buf,sizeof(buf));
+    #endif
+    sndBuffers[SOUND_ID_15_SECONDS] = loadWave(buf);
 
 	strcpy(buf, pluginDir);
 	strcat(buf, "fiveseconds.wav");
-	sndBuffers[SOUND_ID_5_SECONDS] = loadWave(buf);
+    #if APL
+        ConvertPath(buf,buf,sizeof(buf));
+    #endif
+    sndBuffers[SOUND_ID_5_SECONDS] = loadWave(buf);
 
 	strcpy(buf, pluginDir);
 	strcat(buf, "mark.wav");
-	sndBuffers[SOUND_ID_MARK] = loadWave(buf);
+    #if APL
+        ConvertPath(buf,buf,sizeof(buf));
+    #endif
+    sndBuffers[SOUND_ID_MARK] = loadWave(buf);
 
 	if (prevSndCtx != NULL) {
 		alcMakeContextCurrent(prevSndCtx);
