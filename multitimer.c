@@ -44,6 +44,7 @@ XPLMFlightLoopID mouseFloopId;
 XPLMCommandRef commandId;
 XPLMCommandRef commandId2;
 XPLMMenuID g_menu_id;
+XPLMMenuID g_menu_id2;
 
 static void createWindow() {
 	int global_desktop_bounds[4]; // left, bottom, right, top
@@ -91,10 +92,14 @@ static int commandHandler(XPLMCommandRef inCommand, XPLMCommandPhase inPhase, vo
 static int commandHandler2(XPLMCommandRef inCommand, XPLMCommandPhase inPhase, void * inRefcon) {
 	if (inPhase == 0)
 	{
-		brightness = (brightness + 1) % 4;
+		brightness = (brightness + 1) % 7;
 	}
 
 	return 0;
+}
+
+static void	brightness_menu_handler(void * in_menu_ref, void * in_item_ref) {
+	brightness = -atoi((const char *)in_item_ref);
 }
 
 
@@ -132,6 +137,15 @@ PLUGIN_API int XPluginStart(char * outName, char * outSig, char * outDesc) {
 	int g_menu_container_idx = XPLMAppendMenuItem(XPLMFindPluginsMenu(), "MultiTimer", 0, 0);
 	g_menu_id = XPLMCreateMenu("MultiTimer", XPLMFindPluginsMenu(), g_menu_container_idx, dummy_menu_handler, NULL);
 	XPLMAppendMenuItemWithCommand(g_menu_id, "Toggle display", XPLMFindCommand("MultiTimer/ToggleDisplay"));
+	int g_menu_container_idx2 = XPLMAppendMenuItem(g_menu_id, "Window brightness", 0, 0);
+	g_menu_id2 = XPLMCreateMenu("Window brightness", g_menu_id, g_menu_container_idx2, brightness_menu_handler, NULL);
+	XPLMAppendMenuItem(g_menu_id2, " 0", (void *)" 0", 1);
+	XPLMAppendMenuItem(g_menu_id2, "-1", (void *)"-1", 1);
+	XPLMAppendMenuItem(g_menu_id2, "-2", (void *)"-2", 1);
+	XPLMAppendMenuItem(g_menu_id2, "-3", (void *)"-3", 1);
+	XPLMAppendMenuItem(g_menu_id2, "-4", (void *)"-4", 1);
+	XPLMAppendMenuItem(g_menu_id2, "-5", (void *)"-5", 1);
+	XPLMAppendMenuItem(g_menu_id2, "-6", (void *)"-6", 1);
 
 	XPLMRegisterFlightLoopCallback(openSound, -1.0, NULL);
 	return 1;
@@ -139,6 +153,8 @@ PLUGIN_API int XPluginStart(char * outName, char * outSig, char * outDesc) {
 
 PLUGIN_API void	XPluginStop(void) {
 	XPLMUnregisterCommandHandler(commandId, commandHandler, 0, 0);
+	XPLMUnregisterCommandHandler(commandId2, commandHandler2, 0, 0);
+	XPLMDestroyMenu(g_menu_id2);
 	XPLMDestroyMenu(g_menu_id);
 	closeSound();
 }

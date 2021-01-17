@@ -1,8 +1,8 @@
 ---
 title: MultiTimer Manual
-subtitle: 1.0.3
+subtitle: 1.0.4
 author: Craig Smoothey
-date: 9 January 2021
+date: 17 January 2021
 geometry: margin=1in
 papersize: a4
 fontsize: 12pt
@@ -25,6 +25,8 @@ down. Count-down timers provide audio callouts at key moments.
 
 * Windows
 * Linux
+* MacOS. The plugin is compiled for Intel hardware, but runs on M1 hardware 
+  under Rosetta 2 translation.
 
 # Installation
 
@@ -76,7 +78,14 @@ MultiTimer.
 
 The "Change brightness of the MultiTimer window" key command setup in the 
 Installation section of this document can be used to change the display 
-brightness of the MultiTimer.
+brightness of the MultiTimer. Seven brightness levels are provided.
+
+## Plugin Menu
+
+The window display toggle and the window brightness functions can also be 
+accessed via the plugin menu as shown in the following screenshot.
+
+![](plugin-menu.png){width=5in}
 
 ## Power On/Off
 
@@ -215,6 +224,11 @@ Craig Smoothey \<craig@smoothey.org\>
 +---------+--------------------------------------------------------------------+
 | Version | Changes |
 +=========+====================================================================+
+|  1.0.4  | * Added support for MacOS.                           |
+|         | * Added plugin menu for window brightness.           |
+|         | * Increased number of brightness levels from 4 to 7. |
+|         | * Added plugin menu section in the manual.           |
++---------+--------------------------------------------------------------------+
 |  1.0.3  | Added keyboard command to change the window brightness. |
 +---------+--------------------------------------------------------------------+
 |  1.0.2  | Corrections to the manual. |
