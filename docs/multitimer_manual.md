@@ -1,8 +1,8 @@
 ---
 title: MultiTimer Manual
-subtitle: 1.0.4
+subtitle: 1.0.5
 author: Craig Smoothey
-date: 17 January 2021
+date: 22 January 2021
 geometry: margin=1in
 papersize: a4
 fontsize: 12pt
@@ -224,6 +224,9 @@ Craig Smoothey \<craig@smoothey.org\>
 +---------+--------------------------------------------------------------------+
 | Version | Changes |
 +=========+====================================================================+
+|  1.0.5  | mac.xpl is now code-signed and notarised. Gatekeeper should not    |
+|         | display any warning messages.                                      |
++---------+--------------------------------------------------------------------+
 |  1.0.4  | * Added support for MacOS.                           |
 |         | * Added plugin menu for window brightness.           |
 |         | * Increased number of brightness levels from 4 to 7. |
